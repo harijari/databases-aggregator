@@ -13,7 +13,11 @@ Avaiable options
 Configuration file syntax
 ====================
 Each row defines one file to download: 
-User<TAB>Host<TAB>File
-User<TAB>Host:host<TAB>File
+
+
+`User<TAB>Host<TAB>File`  
+or you can also define host port:  
+`User<TAB>Host:port<TAB>File`  
+
 
 Comments begins with # characters. 
