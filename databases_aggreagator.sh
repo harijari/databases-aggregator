@@ -21,17 +21,13 @@ eval set -- "$TEMP"
 while true ; do
         case "$1" in
                 -o|--output_dir) output_dir=$2 ; shift 2 ;;
-                -c|--configuration_dir) echo configuration_dir=$2 ; shift 2 ;;
+                -c|--configuration_dir) configuration_dir=$2 ; shift 2 ;;
 		-h|--help) echo  "Avaiable options 
 -o, --output_dir=DIRECTORY_PATH	        Directory, where downloaded files are stored. Current directory by default.
 -c, --configuration_dir=DIRECTORY_PATH	Directory, with configuration files. By default current directory." ; shift; exit 0; ;;
                 --) shift ; break ;;
         esac
 done
-
-
-
-getopt -l configuration_dir output_dir
 
 for file in $(ls $configuration_dir/*.conf);do 
 	for row in $(cat $file|sed 's,#.*,,g');do 
